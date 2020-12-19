@@ -203,12 +203,12 @@ def _what_variable(obj, **kwargs):
     rep.add(
         Inspect(
             obj,
-            help=False,
-            methods=True,
-            private=True,
-            dunder=False,
-            sort=True,
-            all=False,
+                **{**dict(help=False,
+                        methods=True,
+                        private=True,
+                        dunder=False,
+                        sort=True,
+                        all=False,), **kwargs}
         ),
         "rich",
     )
